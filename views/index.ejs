@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#28a745;
+   color: black;
+   text-align: center;
+}
+    </style>
+</head>
+<body>
+  <div class="container">
+      
+    
+    <h1>URL Shrinker</h1>
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <label for="fullUrl" class="sr-only">URL</label>
+        <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+        <button class="btn btn-success" type="submit">Shrink</button>
+    </form>
+
+    <table class="table table-striped-responsive">
+        <thead>
+            <th>Full URL</th>
+            <th>Short URL</th>
+            <th>Clicks</th>
+        </thead>
+        <tbody>
+           <%  shortUrls.forEach(shortUrl => { %>
+            
+            
+            <tr>
+                <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                <td><a href="<%=shortUrl.short%>"><%=shortUrl.short%></a></td>
+                <td><%= shortUrl.clicks %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <section id="content">
+       
+        <h2>Simple and fast URL shortener!</h2>
+            
+        <p>ShortURL allows to reduce long links from <a href="https://www.facebook.com/" target="_blank">Facebook</a>, <a href="https://www.youtube.com/" target="_blank">YouTube</a>, <a href="https://www.twitter.com/" target="_blank">Twitter</a>, <a href="https://www.linkedin.com/" target="_blank">Linked In</a> and top sites on the Internet, just paste the long URL and click the Shorten URL button. On the next screen, copy the shortened URL and share it on websites, chat and e-mail. After shortening the URL, check <a href="url-click-counter.php">how many clicks it received</a>.</p>
+        
+        <h2>Shorten, share and track</h2>
+        
+            <p>Your shortened URLs can be used in publications, advertisements, blogs, forums, e-mails, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with the click counter, you do not have to register.</p>
+        
+      </section>
+
+<main>
+      <div id="box">
+        <div id="row">
+        <div id="column">
+           
+            <h3 class="aligncenter">Easy</h3>
+            <p class="aligncenter">ShortURL is easy and fast, enter the long link to get your shortened link</p>
+        </div>
+        <div id="column">
+            
+            <h3 class="aligncenter">Shortened</h3>
+            <p class="aligncenter">Use any link, no matter what size, ShortURL always shortens</p>
+        </div>
+        <div id="column">
+            
+            <h3 class="aligncenter">Secure</h3>
+            <p class="aligncenter">It is fast and secure, our service have HTTPS protocol and data encryption</p>
+        </div>
+        <div id="column">
+           
+            <h3 class="aligncenter">Statistics</h3>
+            <p class="aligncenter">Check the amount of clicks that your shortened url received</p>
+        </div>
+        <div id="column">
+           
+            <h3 class="aligncenter">Reliable</h3>
+            <p class="aligncenter">All links that try to disseminate spam, viruses and malware are deleted</p>
+        </div>
+        <div id="column">
+           
+            <h3 class="aligncenter">Devices</h3>
+            <p class="aligncenter">Compatible with smartphones, tablets and desktop</p>
+        </div>
+        </div>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+
+    <div class="footer">
+        <p>Designed and Developed By Ashi Saxena & Harshit Jaiswal</p>
+      </div>
+
+
+   </div>
+</body>
+</html>
